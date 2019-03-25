@@ -3,7 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 const geocode = require('../utils/geocode')
 const forecast = require('../utils/forecats')
-
+const port = process.env.PORT || 3000  // for heroku 
 const app = express()
 
 // define paths 
@@ -110,6 +110,6 @@ app.get('*',(req,res)=>{    // * - match anything that wasn't macthed until now
   })
 
 
-app.listen(3000,()=>{
-  console.log('Server is running')
+app.listen(port,()=>{
+  console.log('Server is listening on port ' + port)
 })  

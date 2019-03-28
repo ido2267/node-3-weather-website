@@ -54,7 +54,7 @@ geocode(address, (error,{latitude,longitude,location}={})=>{
              }
    
   
-   forecast(latitude, longitude,(error,{summary,temperature,probability})=>
+   forecast(latitude, longitude,(error,{summary,temperature,probability,temperatureHigh,temperatureLow})=>
     {if (error){
          
         return   res.send({ error: "An error occured in the weather server."})
@@ -65,7 +65,9 @@ geocode(address, (error,{latitude,longitude,location}={})=>{
          address,
          Temprature:  temperature + ' Celsius',
          Probabilty: Math.round(probability * 100)    +'%', 
-         summary
+         summary,
+         temperatureHigh ,
+         temperatureLow  
         
     })
     })

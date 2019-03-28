@@ -16,9 +16,11 @@ const forecast =(lat,long,callback) =>{
          }
          else{
            callback(undefined, {
-         summary: body.daily.data[0].summary,
-         temperature: body.currently.temperature,
-         probability:  body.currently.precipProbability
+            temperatureHigh:body.daily.data[0].temperatureHigh,
+            temperatureLow :body.daily.data[0].temperatureLow,
+            summary: body.daily.data[0].summary,
+            temperature: body.currently.temperature,
+            probability:  body.currently.precipProbability
          }  ) }
         })
       }     
